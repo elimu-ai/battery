@@ -6,6 +6,7 @@ import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 
 public class BatteryActivity extends Activity {
@@ -16,6 +17,9 @@ public class BatteryActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_battery);
+
+        TextView mcheckBatteryStatus = (TextView) findViewById(R.id.checkBatteryStatus);
+        mcheckBatteryStatus.setText(String.valueOf(checkBatteryStatus()));
 
         Log.d("BATTERY: ", String.valueOf(checkBatteryStatus()));
 
