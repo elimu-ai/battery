@@ -9,7 +9,7 @@ import org.literacyapp.battery.util.VersionHelper;
 
 public class BatteryApplication extends Application {
 
-    public static final String PREF_APP_VERSION_CODE = "pref_last_content_sync";
+    public static final String PREF_APP_VERSION_CODE = "pref_app_version_code";
 
     @Override
     public void onCreate() {
