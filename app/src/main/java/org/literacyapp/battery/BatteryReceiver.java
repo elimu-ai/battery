@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
 import android.util.Log;
+import android.widget.Toast;
 
 
 public class BatteryReceiver extends BroadcastReceiver {
@@ -19,8 +20,10 @@ public class BatteryReceiver extends BroadcastReceiver {
         Log.d("Battery status: ", String.valueOf(batteryPct));
 
         if(batteryPct <= 10) {
+            Toast.makeText(context, "Battery low!!", Toast.LENGTH_SHORT).show();
             Intent batteryIntent = new Intent(context, BatteryActivity.class);
             context.startActivity(batteryIntent);
+
         }
 
     }
