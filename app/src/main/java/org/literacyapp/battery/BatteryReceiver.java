@@ -19,7 +19,7 @@ public class BatteryReceiver extends BroadcastReceiver {
 
         Log.d("Battery status: ", String.valueOf(batteryPct));
 
-        if(batteryPct <= 10) {
+        if(batteryPct <= 43 || batteryPct != 1.0) {
             Toast.makeText(context, "Battery low!!", Toast.LENGTH_SHORT).show();
             Intent batteryIntent = new Intent(context, BatteryActivity.class);
             context.startActivity(batteryIntent);

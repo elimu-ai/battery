@@ -12,7 +12,7 @@ public class BatteryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battery);
         Intent intent = new Intent();
-        intent.setAction("com.action.battery.notifier");
+        intent.setAction("literacyapp.intent.action.BATTERY_STATUS_CHANGED");
         sendBroadcast(intent);
 
     }
