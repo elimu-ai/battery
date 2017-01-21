@@ -17,6 +17,8 @@ public class BatteryReceiver extends BroadcastReceiver {
         int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
         float batteryPct = level / (float)scale;
 
+        Log.d("Battery level: ", String.valueOf(level));
+        Log.d("Battery scale: ", String.valueOf(scale));
         Log.d("Battery status: ", String.valueOf(batteryPct));
 
         if(batteryPct <= 10 || batteryPct != 1.0) {
