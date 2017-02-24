@@ -2,23 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.literacyapp.battery">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".BatteryActivity"
+
+        <activity android:name=".BatteryActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!-- Check if the device is connected to usb or not-->
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".BatteryReceiver">
+            <intent-filter>
+                <action android:name="literacyapp.intent.action.BATTERY_STATUS_CHANGED" />
+                <action android:name="android.intent.action.BATTERY_LOW" />
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
             </intent-filter>
-        </activity>
+        </receiver>
 
     </application>
 
